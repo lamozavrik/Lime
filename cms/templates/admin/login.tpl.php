@@ -16,10 +16,7 @@
         }
 
         .admin-login-inner{
-            max-width: 500px;
             width: 20%;
-            min-width: 320px;
-            min-height: 320px;
             border:1px solid #ccc;
             border-radius: 10px;
             -webkit-border-radius: 10px;
@@ -27,7 +24,6 @@
             -o-border-radius: 10px;
             padding: 2%;
             background: #fff;
-            height: 25%;
             position: absolute;
             top: 50%;
             margin: -12.5% 0 0 -10%;
@@ -94,7 +90,7 @@
 
         .logo{
             position: absolute;
-            top:-40%;
+            top:-35%;
             text-align: center;
             left:0;
             width: 100%;
@@ -104,6 +100,60 @@
             width: 30%;
             height: auto;
         }   
+
+        @media screen and (max-width: 1280px){
+            .admin-login-inner{
+                width: 30%;
+                margin-left: -15%;
+            }
+        }
+
+        @media screen and (max-width: 1280px){
+            .admin-login-inner{
+                width: 40%;
+                margin-left: -20%;
+            }
+        }
+
+        @media screen and (max-width: 768px){
+            .admin-login-inner{
+                width: 60%;
+                margin-left: -30%;
+            }
+        }
+
+        @media screen and (max-width: 568px){
+            .admin-login-inner{
+                top:48%;
+            }
+        }
+
+        @media screen and (max-width: 480px){
+            .admin-login-inner{
+                width: 70%;
+                margin-left: -35%;
+            }
+
+            .admin-login-inner{
+                top:45%;
+            }
+        }
+
+        @media screen and (max-width: 414px){
+            .admin-login-inner{
+                width: 90%;
+                margin-left: -47%;
+            }
+
+            .admin-login-inner{
+                top:35%;
+                text-align: center;
+            }
+
+            .admin-login-inner input, .submit{
+                width: 90%;
+            }
+        }
         </style>
     </head>
     <body>
