@@ -3,6 +3,7 @@
     <head>
         <title><?=_('Вход')?></title>
         <meta name="robots"  content="noindex, nofollow" />
+        <meta name="viewport" content="width=device-width" />
         <style type="text/css">
         *{margin: 0; padding: 0;}
 
@@ -17,6 +18,8 @@
         .admin-login-inner{
             max-width: 500px;
             width: 20%;
+            min-width: 320px;
+            min-height: 320px;
             border:1px solid #ccc;
             border-radius: 10px;
             -webkit-border-radius: 10px;
@@ -94,12 +97,13 @@
             top:-40%;
             text-align: center;
             left:0;
+            width: 100%;
         }
 
         .logo img{
             width: 30%;
             height: auto;
-        } 
+        }   
         </style>
     </head>
     <body>

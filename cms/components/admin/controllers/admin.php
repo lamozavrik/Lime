@@ -17,10 +17,8 @@ class admin extends BaseAdmin{
 
     public function index(){
 
-        if(!$this->user->isLogin()){
-            lime()->redirect(url('login'));
-        }
-        
+        $this->checkPermission();
+        //$this->logout();
         if($this->route){
 
         }

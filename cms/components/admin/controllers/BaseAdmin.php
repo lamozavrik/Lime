@@ -41,4 +41,10 @@ class BaseAdmin extends BaseController{
 
     }
 
+    public function checkPermission(){
+        if(!$this->user->isLogin()){
+            lime()->redirect(url('login'));
+        }
+    }
+
 }
