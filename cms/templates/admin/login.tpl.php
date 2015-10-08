@@ -38,7 +38,7 @@
 
         .admin-login-inner input{
             width: 100%;
-            padding: 2%;
+            padding: 3% 2%;
             margin-left: -2%;
             border:1px solid #ccc;
             border-radius: 5px;
@@ -108,8 +108,8 @@
                 <div class="logo"><img src="/cms/templates/admin/images/logo.png"></div>
                 <div class="title"><?=_('Панель администратора');?></div>
                 <form method="post" action="<?=$this->post_url?>">
-                        <div class="login-field"><input type="text" name="email" /></div>
-                        <div class="password-field"><input type="password" name="password" /></div>
+                        <div class="login-field"><input type="text" name="email" placeholder="E-mail" /></div>
+                        <div class="password-field"><input type="password" name="password" placeholder="<?=_('Пароль') ?>" /></div>
                         <button class="submit"><?=_('Войти')?></button>
                 </form>
             </div>
