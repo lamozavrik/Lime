@@ -39,6 +39,7 @@
         .admin-login-inner input{
             width: 100%;
             padding: 2%;
+            margin-left: -2%;
             border:1px solid #ccc;
             border-radius: 5px;
         }
@@ -61,6 +62,7 @@
             width: 104%;
             padding: 3% 2%;
             margin-top: 3%;
+            margin-left: -2%;
             background: #6EF927;
             background: linear-gradient(#6EF927, #50B51D);
             background: -webkit-linear-gradient(#6EF927, #50B51D);
