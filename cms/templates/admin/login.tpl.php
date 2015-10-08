@@ -99,7 +99,7 @@
         .logo img{
             width: 30%;
             height: auto;
-        }
+        } 
         </style>
     </head>
     <body>
