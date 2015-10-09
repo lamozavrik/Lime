@@ -63,22 +63,22 @@ class View{
         return ob_get_clean();
     }
     
-    public function addCss($cssFile){
-        self::$_css[] = $cssFile;
+    public static function addCss($cssFile){
+        self::$_css[] = $cssFile . '.css';
     }
     
-    public function addJs($jsFile, $after = false){
+    public static  function addJs($jsFile, $after = false){
     	if(!$after)
-        	self::$_css[] = $jsFile;
+        	self::$_js[] = $jsFile . '.js';
         else
         	self::$_afterJs[] = $jsFile;
     }
     
-    public function styles(){
+    public static function styles(){
         return self::$_css;
     }
     
-    public function javascript($after = false){
+    public static function javascript($after = false){
     	if(!$after)
         	return self::$_js;
         else

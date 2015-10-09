@@ -1,1 +1,72 @@
-style.css
+*{padding: 0; margin: 0;}
+
+html, body, #wrapper{height: 100%;}
+
+body{font-size: 14px;}
+
+#wrapper{display: table;}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.clear{clear: both;}
+
+/*==========================================================*/
+/*========================HEADER=============================*/
+
+.header-bg{
+    height:50px;
+    background: #80D654;
+    background: linear-gradient(#80D654, #537144);
+    background: -webkit-linear-gradient(#80D654, #537144);
+    background: -moz-linear-gradient(#80D654, #537144);
+    background: -o-linear-gradient(#80D654, #537144);
+    background: gradient(linear, #80D654, #537144);
+}
+
+#header-nav{
+    background: #1E211E;
+    background: linear-gradient(#4C4C4C, #1E211E);
+    background: -webkit-linear-gradient(#4C4C4C, #1E211E);
+    background: -moz-linear-gradient(#4C4C4C, #1E211E);
+    background: -o-linear-gradient(#4C4C4C, #1E211E);
+    background: gradient(linear, #4C4C4C, #1E211E);
+}
+
+#header-nav li{
+    list-style: none;
+    float: left;
+    display: block;
+    margin: 10px 0;
+}
+
+#header-nav li + li{
+    margin-left: 10px;
+    border-left: 1px solid #666;
+    padding-left: 10px;
+}
+
+#header-nav a{
+    color: #fff;
+    text-decoration: none;
+    line-height: 2em;
+    letter-spacing: 0.1em
+}
+
+/*==========================================================*/
+/*========================CONTENT=============================*/
+
+#content{
+    display: table-row; 
+    height: 100%;
+}
+
+/*==========================================================*/
+/*========================FOOTER=============================*/
+
+footer{
+    background: #ccc;
+    height: 5%;
+}

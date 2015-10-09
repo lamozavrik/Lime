@@ -23,6 +23,9 @@ class admin extends BaseAdmin{
 
         }
 
+        \core\View::addCss('style');
+        $this->render();
+
     }
 
     public function login(){

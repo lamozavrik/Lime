@@ -24,6 +24,7 @@ class BaseController{
 
 	public function __construct(){
 		$this->user = User::instance();
+		$this->data['user'] = $this->user;
 	}
 
 	public function __get($var){
@@ -34,9 +35,14 @@ class BaseController{
 		$this->layout = $layout;
 	}
 
-	protected function render($view, $return = false){
+	protected function render($view = null, $return = false){
 		if($return)
 			return View::factory($view)->render($this->data);
+
+		if(!$view){
+			echo View::factory($this->layout)->render($this->data);
+			return;
+		}
 
 		if($this->layout){
 			$data = View::factory($view)->render($this->data);

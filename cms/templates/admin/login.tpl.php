@@ -160,7 +160,7 @@
         <div class="admin-login-wr">
             <div class="admin-login-inner">
                 <div class="logo"><img src="/cms/templates/admin/images/logo.png"></div>
-                <div class="title"><?=_('Панель администратора');?></div>
+                <div class="title"><?=_('Панель управления');?></div>
                 <form method="post" action="<?=$this->post_url?>">
                         <div class="login-field"><input type="text" name="email" placeholder="E-mail" /></div>
                         <div class="password-field"><input type="password" name="password" placeholder="<?=_('Пароль') ?>" /></div>
