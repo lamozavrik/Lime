@@ -36,23 +36,60 @@ body{font-size: 14px;}
 }
 
 #header-nav li{
+    margin: 10px 5px 10px 0;
+    padding: 0;
     list-style: none;
-    float: left;
-    display: block;
-    margin: 10px 0;
-}
-
-#header-nav li + li{
-    margin-left: 10px;
-    border-left: 1px solid #666;
-    padding-left: 10px;
+    display:inline;
+    display: inline-block;
 }
 
 #header-nav a{
     color: #fff;
     text-decoration: none;
-    line-height: 2em;
+    line-height: 100%;
     letter-spacing: 0.1em
+}
+
+@media screen and (max-width: 600px){
+    #header-nav{
+        position: relative;
+        min-height: 40px;
+    }
+
+    #header-nav ul{
+        width: 100%;
+        padding: 5px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #1E211E;
+        background: linear-gradient(#4C4C4C, #1E211E);
+        background: -webkit-linear-gradient(#4C4C4C, #1E211E);
+        background: -moz-linear-gradient(#4C4C4C, #1E211E);
+        background: -o-linear-gradient(#4C4C4C, #1E211E);
+        background: gradient(linear, #4C4C4C, #1E211E);
+    }
+
+    #header-nav ul li{
+        display: none; /* скрыть все <li> пункты */
+        margin: 0;
+        height: 100%;
+    }
+
+    #header-nav .parent-active{
+        display: block;
+    }
+
+    #header-nav a {
+        display: block;
+        padding: 5px 5px 5px 32px;
+        text-align: left;
+    }
+
+    #header-nav ul:hover li {
+        display: block;
+        margin: 0 0 5px;
+    }
 }
 
 /*==========================================================*/

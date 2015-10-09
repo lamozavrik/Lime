@@ -2,7 +2,7 @@
 <html>
     <head>
         <title><?=_('Панель управления')?></title>
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <?php foreach(\core\View::styles() as $style): ?>
         <link rel="stylesheet" type="text/css" href="/cms/templates/admin/css/<?=$style ?>" />
         <?php endforeach; ?>
@@ -17,7 +17,7 @@
                 <nav id="header-nav">
                     <div class="container">
                         <ul>
-                            <li><a href="#">Администрирование</a></li>
+                            <li class="parent-active"><a href="#">Администрирование</a></li>
                             <li><a href="#">Статистика</a></li>
                             <li><a href="#">Статистика</a></li>
                             <li><a href="#">Статистика</a></li>
