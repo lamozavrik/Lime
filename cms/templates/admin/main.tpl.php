@@ -16,7 +16,17 @@
                 $('#nav li').has('ul').addClass('parent');
 
                 var windiwVidth = $(window).outerWidth();
-                if(windiwVidth <= 800){
+
+                $(window).resize(function(){
+                    if($(window).outerWidth() > 800){
+                        $('#nav').show();
+                    } else {
+                        $('#nav').hide();
+                    }
+                })
+
+                if(windiwVidth <= 1024){
+                    $('#nav').hide();
                     $('#toggleMenu').on('click', function(){
                         $('#nav li').removeClass('hover');
                         $('#nav').toggle();
