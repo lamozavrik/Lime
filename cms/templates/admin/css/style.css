@@ -33,62 +33,110 @@ body{font-size: 14px;}
     background: -moz-linear-gradient(#4C4C4C, #1E211E);
     background: -o-linear-gradient(#4C4C4C, #1E211E);
     background: gradient(linear, #4C4C4C, #1E211E);
+    position: relative;
 }
 
-#header-nav li{
-    margin: 10px 5px 10px 0;
-    padding: 0;
-    list-style: none;
-    display:inline;
-    display: inline-block;
-}
-
-#header-nav a{
-    color: #fff;
+#toggleMenu{
+    display: none;
+    line-height: 40px;
+    padding: 0 15px;
     text-decoration: none;
-    line-height: 100%;
-    letter-spacing: 0.1em
+    color:#fff;
+    letter-spacing: 0.1em;
 }
 
-@media screen and (max-width: 600px){
-    #header-nav{
-        position: relative;
-        min-height: 40px;
-    }
+.toggleMenuItem{
+    height: 40px;
+    background: url(../images/menu.png) no-repeat left center;;
+    width: 100px;
+}
 
-    #header-nav ul{
+#nav, #nav ul{
+    list-style: none;
+}
+
+#nav a{
+    text-decoration: none;
+    color:#fff;
+    letter-spacing: 0.1em;
+    padding: 0 15px;
+    display: block;
+    line-height: 40px;
+    background: url(../images/rightArrow.png) no-repeat left center;
+}
+
+#nav ul{
+    background: rgba(0,0,0,.7);
+}
+
+#nav:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#nav li{
+    position: relative;
+}
+
+#nav > li{
+    float: left;
+}
+
+#nav > li ul{
+    position: absolute;
+    min-width: 250px;
+    display: none;
+}
+
+#nav ul li ul{
+    left: 100%;
+    top:0;
+}
+
+#nav .hover.parent > a{
+    background: url(../images/downArrow.png) no-repeat left center;
+}
+
+#nav .hover > ul{
+    display: block;
+}
+
+@media screen and (max-width: 800px){
+    #header-nav .container{
         width: 100%;
-        padding: 5px 0;
+    }
+
+    #toggleMenu{
+        display: block;
+    }
+
+    #nav{
         position: absolute;
-        top: 0;
-        left: 0;
-        background: #1E211E;
-        background: linear-gradient(#4C4C4C, #1E211E);
-        background: -webkit-linear-gradient(#4C4C4C, #1E211E);
-        background: -moz-linear-gradient(#4C4C4C, #1E211E);
-        background: -o-linear-gradient(#4C4C4C, #1E211E);
-        background: gradient(linear, #4C4C4C, #1E211E);
+        background: rgba(0,0,0,.7);
+        width: 100%;
+        top: 40px;
+        display: none;
     }
 
-    #header-nav ul li{
-        display: none; /* скрыть все <li> пункты */
-        margin: 0;
-        height: 100%;
+    #nav ul{
+        background: none;
     }
 
-    #header-nav .parent-active{
-        display: block;
+    #nav > li{
+        float: none;
     }
 
-    #header-nav a {
-        display: block;
-        padding: 5px 5px 5px 32px;
-        text-align: left;
+    #nav > li ul{
+        position: static;
     }
 
-    #header-nav ul:hover li {
-        display: block;
-        margin: 0 0 5px;
+    #nav li li a{
+        border-top: 1px solid #666;
+    }
+
+    #nav > li + li a{
+        border-top: 1px solid #666;
     }
 }
 
