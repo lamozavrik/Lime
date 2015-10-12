@@ -43,6 +43,7 @@ function autoload($class_name){
 spl_autoload_register('autoload');
 
 include_once DIR_ROOT . '/core/helpers/lime.php';
+include_once DIR_CMS . '/helpers/cms.php';
 
 //Подключения основного класса CMS
 require DIR_ROOT . '/core/Lime.php';

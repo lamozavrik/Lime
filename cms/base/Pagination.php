@@ -18,10 +18,17 @@ class Pagination{
     public $links = 10;
     public $per_page = 10;
     public $total = 0;
-    public $template = DIR_CMS . '/templates/pagination.tpl.php';
+    public $template;
+    public $link = '';
+
+    public function __Construct($view = 'pagination.tpl.php'){
+        $this->template  = DIR_CMS . '/templates/' . $view;
+    }
 
     public function render(){
-
+        ob_start();
+        include $this->template;
+        return ob_get_clean();
     }
 
 }

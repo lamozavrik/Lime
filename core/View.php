@@ -53,11 +53,9 @@ class View{
         return isset($this->_data[$key]) ? $this->_data[$key] : null;
     }
     
-    public function render($data = [], $view = null){
+    public function render($data = []){
     	if($data)
     		$this->_data = array_merge($this->_data, $data);
-        if($view)
-            $this->_view = $view;
 
         ob_start();
         //extract($this->_data, EXTR_SKIP | EXTR_REFS);

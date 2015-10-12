@@ -24,6 +24,7 @@ class admin extends BaseAdmin{
 
         }
 
+        echo pagination()->render();
         \core\View::addCss('style');
         $this->render();
 
