@@ -10,53 +10,6 @@
         <?php foreach(\core\View::javascript() as $js): ?>
         <script type="text/javascript" src="<?=url('cms/templates/admin/js') . '/' . $js ?>"></script>
         <?php endforeach; ?>
-        <script type="text/javascript">
-            $(function(){
-
-                $('#nav li').has('ul').addClass('parent');
-
-                var windiwVidth = $(window).outerWidth();
-
-                $(window).resize(function(){
-                    if($(window).outerWidth() > 800){
-                        $('#nav').show();
-                    } else {
-                        $('#nav').hide();
-                    }
-                })
-
-                if(windiwVidth <= 1024){
-                    $('#nav').hide();
-                    $('#toggleMenu').on('click', function(){
-                        $('#nav li').removeClass('hover');
-                        $('#nav').toggle();
-                        return false;
-                    })
-
-                    $('#nav a').on('click', function(){
-                        var el = $(this).parent('li');
-                        $('#nav li').not(el).not(el.parents()).removeClass('hover');
-                        el.toggleClass('hover');
-
-                        if(el.hasClass('parent'))
-                            return false;
-                    });
-
-                } else {
-
-                    $('#nav a').on('click', function(){
-                        if($(this).parent('li').hasClass('parent'))
-                            return false;
-                    });
-
-                    $('#nav li').hover(function(){
-                        $(this).addClass('hover');
-                    }, function(){
-                        $(this).removeClass('hover');
-                    });
-                }
-            });
-        </script>
     </head>
     <body>
         <section id="wrapper">
@@ -101,13 +54,65 @@
             </header>
             <section id="content">
                 <div class="container">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
+                    <div class="box">
+                        <div class="box-title">
+                            <p class="title">title</p>
+                            <div class="box-buttons">
+                                <a href="#" class="button">Добавить</a>
+                                <a href="#" class="button">Удалить</a>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <table class="box-table">
+                                <thead>
+                                    <tr>
+                                        <th class="checkbox"><input type="checkbox" /></th>
+                                        <th class="left">aaa</th>
+                                        <th class="center">bbb</th>
+                                        <th class="right">ccc</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="checkbox"><input type="checkbox" /></td>
+                                        <td class="left">aaa</td>
+                                        <td class="center">bbb</td>
+                                        <td class="right">ccc</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox"><input type="checkbox" /></td>
+                                        <td class="left">aaa</td>
+                                        <td class="center">bbb</td>
+                                        <td class="right">ccc</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox"><input type="checkbox" /></td>
+                                        <td class="left">aaa</td>
+                                        <td class="center">bbb</td>
+                                        <td class="right">ccc</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox"><input type="checkbox" /></td>
+                                        <td class="left">aaa</td>
+                                        <td class="center">bbb</td>
+                                        <td class="right">ccc</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox"><input type="checkbox" /></td>
+                                        <td class="left">aaa</td>
+                                        <td class="center">bbb</td>
+                                        <td class="right">ccc</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox"><input type="checkbox" /></td>
+                                        <td class="left">aaa</td>
+                                        <td class="center">bbb</td>
+                                        <td class="right">ccc</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </section>
             <footer>

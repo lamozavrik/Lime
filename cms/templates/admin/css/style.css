@@ -7,7 +7,7 @@ body{font-size: 14px;}
 #wrapper{display: table;}
 
 .container{
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
 }
 
@@ -100,6 +100,132 @@ body{font-size: 14px;}
 
 #nav .hover > ul{
     display: block;
+}
+
+/* =============================CONTENT ================================*/
+
+.box{
+    border:1px solid #537144;
+    margin-top: 10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -khtml-border-radius:10px;
+    -o-border-radius:10px;
+    -ms-border-radius:10px;
+    border-radius:10px;
+
+    font-size: 1.14em;
+}
+
+.box-title{
+    background: #80D654;
+    background: linear-gradient(#80D654, #537144);
+    background: -webkit-linear-gradient(#80D654, #537144);
+    background: -moz-linear-gradient(#80D654, #537144);
+    background: -o-linear-gradient(#80D654, #537144);
+    background: gradient(linear, #80D654, #537144);
+
+    -webkit-border-radius:10px 10px 0 0;
+    -moz-border-radius:10px 10px 0 0;
+    -khtml-border-radius:10px 10px 0 0;
+    -o-border-radius:10px 10px 0 0;
+    -ms-border-radius:10px 10px 0 0;
+    border-radius:10px 10px 0 0;
+
+    padding: 10px;
+    color:#1E211E;
+}
+
+.box-title .title{
+    float: left;
+    font-size: 1.25em;
+}
+
+.box-content{
+    padding: 10px;
+}
+
+.box-buttons{
+    float: right;
+}
+
+.box-title:after{
+    content: " ";
+    clear: both;
+    display: block;
+}
+
+.box-table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: 0;
+}
+
+.box-table tbody tr:nth-child(even){
+    background-color: #ddd;
+}
+
+.box-table tbody tr:hover{
+    background-color: #BADEA8;
+}
+
+.box-table th{
+    background: #1E211E;
+    background: linear-gradient(#4C4C4C, #1E211E);
+    background: -webkit-linear-gradient(#4C4C4C, #1E211E);
+    background: -moz-linear-gradient(#4C4C4C, #1E211E);
+    background: -o-linear-gradient(#4C4C4C, #1E211E);
+    background: gradient(linear, #4C4C4C, #1E211E);
+
+    color: #fff;
+
+    border-top: none;
+    border-left: 1px solid #4C4C4C;
+    border-right: 1px solid #4C4C4C;
+}
+
+.box-table td, .box-table th{
+    padding: 5px;
+    border: 1px solid #999;
+}
+
+.box-table .left{
+    text-align: left;
+}
+
+.box-table .center{
+    text-align: center;
+}
+
+.box-table .right{
+    text-align: right;
+}
+
+.box-table .checkbox{
+    width: 10px;
+    text-align: center;
+}
+
+.button{
+    background: #1E211E;
+    background: linear-gradient(#4C4C4C, #1E211E);
+    background: -webkit-linear-gradient(#4C4C4C, #1E211E);
+    background: -moz-linear-gradient(#4C4C4C, #1E211E);
+    background: -o-linear-gradient(#4C4C4C, #1E211E);
+    background: gradient(linear, #4C4C4C, #1E211E);
+
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    -khtml-border-radius:5px;
+    -o-border-radius:5px;
+    -ms-border-radius:5px;
+    border-radius:5px;
+
+    padding: 5px 15px;
+    text-decoration: none;
+    color:#fff;
+    font-size: 0.875em;
 }
 
 @media screen and (max-width: 1024px){

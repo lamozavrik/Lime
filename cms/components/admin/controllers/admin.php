@@ -19,6 +19,7 @@ class admin extends BaseAdmin{
 
         $this->checkPermission();
         //$this->logout();
+        \core\View::addJs('menu');
         if($this->route){
 
         }
