@@ -29,7 +29,7 @@ class BaseAdmin extends BaseController{
         
         if(config('components.default') != 'admin' && request()->segment(1) != 'admin'){
             request()->setStatus(404);
-            lime()->redirect('/errors', request()->status());
+            lime()->redirect('errors', request()->status());
         }
 
         config()->set('cms.template', 'admin');

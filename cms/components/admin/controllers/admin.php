@@ -24,7 +24,14 @@ class admin extends BaseAdmin{
 
         }
 
-        echo pagination()->render();
+        $pagination = pagination();
+        $pagination->link = url('admin', [
+            'page' => '{page}'
+        ]);
+        $pagination->total = 200;
+        $pagination->cur_page = request()->get('page', FILTER_SANITIZE_NUMBER_INT);
+
+        $this->data['pagination'] = $pagination->render();
         \core\View::addCss('style');
         $this->render();
 
@@ -33,17 +40,17 @@ class admin extends BaseAdmin{
     public function login(){
 
         if($this->user->isLogin()){
-            lime()->redirect(url());
+            lime()->redirect(url('admin'));
         }
 
         if(request()->isPost()){
-            if($this->user->login(request()->post('email'), request()->post('password'))){
-                lime()->redirect(url());
+            if($this->user->login(request()->post('email', FILTER_VALIDATE_EMAIL), request()->post('password'))){
+                lime()->redirect(url('admin'));
             }
         }
 
         $this->setLayout(null);
-        $this->data['post_url'] = url('login');
+        $this->data['post_url'] = url('admin/login');
 
         $this->render('login');
 
@@ -51,7 +58,7 @@ class admin extends BaseAdmin{
 
     public function logout(){
         $this->user->logout();
-        lime()->redirect(url('login'));
+        lime()->redirect(url('admin/login'));
     }
 
 

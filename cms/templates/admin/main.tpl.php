@@ -66,7 +66,7 @@
                             <table class="box-table">
                                 <thead>
                                     <tr>
-                                        <th class="checkbox"><input type="checkbox" /></th>
+                                        <th class="checkbox"><input type="checkbox" onchange="$(this).closest('table').find('tbody input[name*=\'check-id\']').prop('checked', this.checked)" /></th>
                                         <th class="left">aaa</th>
                                         <th class="center">bbb</th>
                                         <th class="right">ccc</th>
@@ -74,43 +74,44 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="checkbox"><input type="checkbox" /></td>
+                                        <td class="checkbox"><input type="checkbox" name="check-id[]" /></td>
                                         <td class="left">aaa</td>
                                         <td class="center">bbb</td>
                                         <td class="right">ccc</td>
                                     </tr>
                                     <tr>
-                                        <td class="checkbox"><input type="checkbox" /></td>
+                                        <td class="checkbox"><input type="checkbox" name="check-id[]" /></td>
                                         <td class="left">aaa</td>
                                         <td class="center">bbb</td>
                                         <td class="right">ccc</td>
                                     </tr>
                                     <tr>
-                                        <td class="checkbox"><input type="checkbox" /></td>
+                                        <td class="checkbox"><input type="checkbox" name="check-id[]" /></td>
                                         <td class="left">aaa</td>
                                         <td class="center">bbb</td>
                                         <td class="right">ccc</td>
                                     </tr>
                                     <tr>
-                                        <td class="checkbox"><input type="checkbox" /></td>
+                                        <td class="checkbox"><input type="checkbox" name="check-id[]" /></td>
                                         <td class="left">aaa</td>
                                         <td class="center">bbb</td>
                                         <td class="right">ccc</td>
                                     </tr>
                                     <tr>
-                                        <td class="checkbox"><input type="checkbox" /></td>
+                                        <td class="checkbox"><input type="checkbox" name="check-id[]" /></td>
                                         <td class="left">aaa</td>
                                         <td class="center">bbb</td>
                                         <td class="right">ccc</td>
                                     </tr>
                                     <tr>
-                                        <td class="checkbox"><input type="checkbox" /></td>
+                                        <td class="checkbox"><input type="checkbox" name="check-id[]" /></td>
                                         <td class="left">aaa</td>
                                         <td class="center">bbb</td>
                                         <td class="right">ccc</td>
                                     </tr>
                                 </tbody>
                             </table>
+                            <?=$this->pagination; ?>
                         </div>
                     </div>
                 </div>

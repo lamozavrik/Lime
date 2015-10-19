@@ -19,9 +19,6 @@ class Request{
 
 	use traits\Singleton;	
 
-	private $get = [];
-	private $post = [];
-
 	private $uri;
 	private $query_string;
 
@@ -29,17 +26,6 @@ class Request{
 	private $status = 200;
 
 	private function __construct(){
-		$get =& $this->get;
-		$post =& $this->post;
-
-		array_map(function($key) use(&$get){
-			$get[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_STRING);
-		}, array_keys($_GET));
-
-		array_map(function($key) use(&$post){
-			$post[$key] = filter_input(INPUT_POST, $key);
-		}, array_keys($_POST));
-
 		$this->parseUrl();
 	}
 
@@ -101,18 +87,12 @@ class Request{
         		&& strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
 	}
 
-	public function get($value){
-		if(isset($this->get[$value]))
-			return $this->get[$value];
-
-		return null;
+	public function get($value, $filter = FILTER_SANITIZE_STRING){
+		return filter_input(INPUT_GET, $value, $filter);
 	}
 
-	public function post($value){
-		if(isset($this->post[$value]))
-			return $this->post[$value];
-
-		return null;
+	public function post($value, $filter = FILTER_SANITIZE_FULL_SPECIAL_CHARS){
+		return filter_input(INPUT_POST, $value, $filter);
 	}
 
 }

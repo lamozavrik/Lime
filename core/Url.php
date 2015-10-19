@@ -19,17 +19,30 @@ class Url{
 
     use traits\Singleton;
     
-    public function set($url = null, $qs = [], $protocol = 'http'){
-        $return_url = $protocol . '://' . $_SERVER['HTTP_HOST'];
+    public function set($url, $qs = [], $protocol = 'http'){
 
-        $component = router()->component()['name'];
+        if($url)
+            $segments = explode('/', trim($url, '/'));
+
+        $return_url = $protocol . '://' . $_SERVER['HTTP_HOST'] . '/';
+
         $def_component = config('components.default');
+        $langs = lang()->installed_langs;
 
-        $return_url .= $component == $def_component ? '' : '/' . $component;
-        $return_url .= $url ? '/' . trim($url, '/') : '';
+        if(isset($segments) && $segments){
+            if(in_array($segments[0], $langs))
+                array_shift($segments);
 
-        if($qs)
+            if($segments[0] == $def_component)
+                array_shift($segments);
+        }
+
+        if(isset($segments) && $segments)
+            $return_url .= implode('/', $segments);
+
+        if($qs){
             $return_url .= '?' . http_build_query($qs);
+        }
 
         return $return_url;
     

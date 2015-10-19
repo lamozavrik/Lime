@@ -145,6 +145,12 @@ body{font-size: 14px;}
     padding: 10px;
 }
 
+.box-content:after{
+    content: " ";
+    clear:both;
+    display: block;
+}
+
 .box-buttons{
     float: right;
 }
@@ -278,6 +284,25 @@ body{font-size: 14px;}
 #content{
     display: table-row; 
     height: 100%;
+}
+
+.pagination{
+    float: right;
+    margin-top: 10px;
+}
+
+.pagination a{
+    border: 1px solid #1E211E;
+    text-decoration: none;
+    background: #4C4C4C;
+    color:#fff;
+    padding: 2px 5px;
+}
+
+.pagination .cur-page{
+    color: #4C4C4C;
+    border: 1px solid #1E211E;
+    padding: 2px 5px;
 }
 
 /*==========================================================*/
