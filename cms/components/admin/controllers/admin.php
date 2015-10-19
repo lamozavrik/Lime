@@ -15,14 +15,15 @@ if(!defined('LIMECMS'))
 
 class admin extends BaseAdmin{
 
+    protected $default_route = 'main';
+
     public function index(){
 
         $this->checkPermission();
-        //$this->logout();
+        
         \core\View::addJs('menu');
-        if($this->route){
 
-        }
+        $this->run();
 
         $pagination = pagination();
         $pagination->link = url('admin', [
@@ -59,6 +60,15 @@ class admin extends BaseAdmin{
     public function logout(){
         $this->user->logout();
         lime()->redirect(url('admin/login'));
+    }
+
+    protected function run(){
+        if(!$this->route)
+            $this->route = $this->default_route;
+
+        foreach(explode('/', $this->route) as $segment){
+            
+        }
     }
 
 

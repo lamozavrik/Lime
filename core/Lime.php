@@ -75,7 +75,7 @@ class Lime{
 	public function exceptionHandler($e){
 		$debug = config('cms.debug');
 		ob_start();
-		include_once 'templates/exception.teplate.php';
+		include_once 'templates/exception.template.php';
 		die(ob_get_clean());
 	}
 
