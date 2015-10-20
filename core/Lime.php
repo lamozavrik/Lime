@@ -22,6 +22,7 @@ class Lime{
 	private $registry = [];
 
 	private function __construct(){
+
 		$this->registry['db'] = core\DB::factory('default');
 		config()->load(unserialize($this->registry['db']->prepare("SELECT config FROM settings LIMIT 1")->execute()->fetch()->config));
 		$this->registry['config'] = config();

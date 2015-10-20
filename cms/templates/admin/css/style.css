@@ -87,6 +87,7 @@ body{font-size: 14px;}
     position: absolute;
     min-width: 250px;
     display: none;
+    z-index: 2;
 }
 
 #nav ul li ul{
@@ -232,6 +233,71 @@ body{font-size: 14px;}
     text-decoration: none;
     color:#fff;
     font-size: 0.875em;
+}
+
+.box-tabs-nav{
+
+}
+
+.box-tabs-nav:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.box-tabs-nav ul{
+    position: relative;
+    top: 1px;
+}
+
+.box-tab-button{
+    float: left;
+    list-style: none;
+    padding: 10px;
+    border: 1px solid #1E211E;
+    border-bottom: none;
+
+    -webkit-border-radius:10px 10px 0 0;
+    -moz-border-radius:10px 10px 0 0;
+    -khtml-border-radius:10px 10px 0 0;
+    -o-border-radius:10px 10px 0 0;
+    -ms-border-radius:10px 10px 0 0;
+    border-radius:10px 10px 0 0;
+
+    background: #1E211E;
+    background: linear-gradient(#4C4C4C, #1E211E);
+    background: -webkit-linear-gradient(#4C4C4C, #1E211E);
+    background: -moz-linear-gradient(#4C4C4C, #1E211E);
+    background: -o-linear-gradient(#4C4C4C, #1E211E);
+    background: gradient(linear, #4C4C4C, #1E211E);
+
+    color: #fff;
+    cursor: pointer;
+}
+
+.box-tab-button + .box-tab-button{
+    margin-left: 5px;
+}
+
+.box-tab-button.active{
+    border-bottom: none;
+    background: #fff;
+    color: #4C4C4C;
+}
+
+.box-tab{
+    border: 1px solid #1E211E;
+    min-height: 100px;
+
+    -webkit-border-radius:10px 10px 0 0;
+    -moz-border-radius:10px 10px 0 0;
+    -khtml-border-radius:10px 10px 0 0;
+    -o-border-radius:10px 10px 0 0;
+    -ms-border-radius:10px 10px 0 0;
+    border-radius:0px 10px 10px 10px;
+
+    display: none;
+    padding: 10px;
 }
 
 @media screen and (max-width: 1024px){

@@ -3,7 +3,7 @@
     <?php foreach($this->prev_pagination as $page): ?>
     <a href="<?=$page['link']?>"><?=$page['page']?></a>
     <?php endforeach; ?>
-    <?=$this->delimiter; ?>
+    <span><?=$this->delimiter; ?></span>
 <?php endif; ?>
 
 <?php if($this->pagination): ?>
@@ -17,7 +17,7 @@
 <?php endif; ?>
 
 <?php if($this->next_pagination): ?>
-    <?=$this->delimiter; ?>
+    <span><?=$this->delimiter; ?></span>
     <?php foreach($this->next_pagination as $page): ?>
     <a href="<?=$page['link']?>"><?=$page['page']?></a>
     <?php endforeach; ?>

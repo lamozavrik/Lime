@@ -56,3 +56,7 @@ function cache($key = null){
 function url($url = null, $qs = [], $protocol = 'http'){
     return \core\Url::instance()->set($url, $qs, $protocol);
 }
+
+function view($view, $data = []){
+    return new \core\View($view, $data);
+}

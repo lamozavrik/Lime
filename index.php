@@ -33,10 +33,10 @@ function autoload($class_name){
 	$path = str_replace('\\', '/', $class_name);
 	$file = DIR_ROOT . '/' . $path . '.php';
 	
-	if(!file_exists($file))
-		throw new Exception('Файл ' . $file . ' не существует!');
-
-	include $file;		
+	//if(!file_exists($file))
+		//throw new Exception('Файл ' . $file . ' не существует!');
+	if(file_exists($file))
+		include $file;		
 }
 
 //Регистрация основного автозагрузчика

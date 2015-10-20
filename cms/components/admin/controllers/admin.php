@@ -15,26 +15,14 @@ if(!defined('LIMECMS'))
 
 class admin extends BaseAdmin{
 
-    protected $default_route = 'main';
-
     public function index(){
-
-        $this->checkPermission();
         
-        \core\View::addJs('menu');
-
-        $this->run();
-
-        $pagination = pagination();
-        $pagination->link = url('admin', [
-            'page' => '{page}'
-        ]);
-        $pagination->total = 200;
-        $pagination->cur_page = request()->get('page', FILTER_SANITIZE_NUMBER_INT);
-
-        $this->data['pagination'] = $pagination->render();
         \core\View::addCss('style');
-        $this->render();
+        \core\View::addJs('menu');
+        \core\View::addJs('tabs');
+
+        if($this->user->isLogin())
+            $this->run();
 
     }
 
@@ -64,11 +52,36 @@ class admin extends BaseAdmin{
 
     protected function run(){
         if(!$this->route)
-            $this->route = $this->default_route;
+            $this->route = 'main';
 
-        foreach(explode('/', $this->route) as $segment){
-            
+        $method = 'index';
+
+        $file = 'cms/components/admin/controllers';
+        $segments = explode('/', $this->route);
+
+        foreach($segments as $key => $segment){
+            $file .= '/' . $segment;
+            unset($segments[$key]);
+
+            if(file_exists($file . '.php'))
+                break;
+
         }
+
+        if($segments)
+            $method = array_shift($segments);
+
+        $class = str_replace('/', '\\', $file);
+        if(!class_exists($class)){
+            return (new error())->index(_('Ошибка!'), _('Доступ запрещен!'), 404);
+        }
+
+        $permission = $class . '::' . $method;
+        if(!in_array($permission, $this->user->group->permissions))
+            return (new error())->index(_('Ошибка!'), _('Доступ запрещен!'));
+        
+        return (new $class())->$method();
+        
     }
 
 

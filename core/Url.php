@@ -41,7 +41,7 @@ class Url{
             $return_url .= implode('/', $segments);
 
         if($qs){
-            $return_url .= '?' . http_build_query($qs);
+            $return_url .= '?' . urldecode(http_build_query($qs));
         }
 
         return $return_url;
